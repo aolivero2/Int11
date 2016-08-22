@@ -5,6 +5,8 @@
  */
 package ejercicios;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SERVIDOR
@@ -28,10 +30,94 @@ public class Ejercicio11 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtPanl = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtGinc = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtPed = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtTraum = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel1.setText("    PRESUPUESTO ANUAL DEL HOSPITAL");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 400, 50));
+
+        cmdCalcular.setBackground(new java.awt.Color(255, 255, 102));
+        cmdCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 90, 30));
+
+        cmdBorrar.setBackground(new java.awt.Color(255, 255, 102));
+        cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 90, 30));
+
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel2.setText("  Valor del Presupuesto:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 160, 30));
+
+        txtPanl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPanlKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPanl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 140, 40));
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setText(" Area de Ginecología:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 160, 40));
+
+        txtGinc.setEditable(false);
+        txtGinc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGincKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtGinc, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 160, 40));
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel4.setText(" Area de Pediatría:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, 30));
+
+        txtPed.setEditable(false);
+        txtPed.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPedKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPed, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 160, 40));
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setText(" Area de Traumología:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 160, 30));
+
+        txtTraum.setEditable(false);
+        txtTraum.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTraumKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTraum, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,6 +132,60 @@ public class Ejercicio11 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPanlKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPanlKeyTyped
+       char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtPanlKeyTyped
+
+    private void txtGincKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGincKeyTyped
+        
+    }//GEN-LAST:event_txtGincKeyTyped
+
+    private void txtPedKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPedKeyTyped
+        
+    }//GEN-LAST:event_txtPedKeyTyped
+
+    private void txtTraumKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTraumKeyTyped
+        
+    }//GEN-LAST:event_txtTraumKeyTyped
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        String Ginc,Pedt,Traum;
+        double presp,desc1=0,desc2=0,desc3=0;
+        
+        if (txtPanl.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite el presupuesto anual","Error",JOptionPane.ERROR_MESSAGE);
+            txtPanl.requestFocusInWindow();
+        }
+        else{
+            presp=Double.parseDouble(txtPanl.getText());
+            desc1=(presp*0.40);
+            desc2=(presp*0.30);
+            desc3=(presp*0.30);
+        }
+        Ginc=String.valueOf(desc1);
+        txtGinc.setText(Ginc);
+        Pedt=String.valueOf (desc2);
+        txtPed.setText(Pedt);
+        Traum=String.valueOf(desc3);
+        txtTraum.setText(Traum);
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtGinc.setText("");
+        txtPed.setText("");
+        txtTraum.setText("");
+        txtPanl.setText("");
+        
+       txtPanl.requestFocusInWindow(); 
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,6 +223,17 @@ public class Ejercicio11 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtGinc;
+    private javax.swing.JTextField txtPanl;
+    private javax.swing.JTextField txtPed;
+    private javax.swing.JTextField txtTraum;
     // End of variables declaration//GEN-END:variables
 }
